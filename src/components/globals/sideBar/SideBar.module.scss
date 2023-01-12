@@ -1,0 +1,50 @@
+@import "../../../assets/styles/sharedstyles.scss";
+
+.sidebar {
+  position: fixed;
+  top: to-rem(90);
+  bottom: 0;
+  left: 0;
+  padding: to-rem(20 30);
+  background-color: #fff;
+  width: to-rem(283);
+  box-shadow: inset -1px 0px 0px #f1f1f1;
+  height: 100%;
+  z-index: 0;
+  .orgToggle {
+    display: flex;
+    gap: to-rem(10.9);
+    align-items: center;
+    margin-bottom: to-rem(32);
+    span {
+      font-weight: 400;
+      font-size: 14px;
+      // line-height: 19px;
+      color: #213f7d;
+    }
+  }
+  .menuHeader {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #545f7d;
+    margin-bottom: to-rem(10);
+  }
+  a {
+    text-decoration: none;
+  }
+  .menuItems {
+    display: flex;
+    gap: to-rem(10.9);
+    align-items: center;
+    cursor: pointer;
+    p {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: #213f7d;
+      text-decoration: none;
+      margin: to-rem(7 0);
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@import "../../../assets/styles/sharedstyles.scss";
+.navBar {
+    background: #FFFFFF;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    height: to-rem(90);
+    z-index: 10;
+    position: relative;
+}
