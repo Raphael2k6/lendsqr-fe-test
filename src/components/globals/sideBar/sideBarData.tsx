@@ -9,7 +9,7 @@ export const Customers = [
         id: 2,
         name: 'Guarantors',
         icon: 'guarantors',
-        route: '/user'
+        route: '/guarantors'
     },
     {
         id: 3,

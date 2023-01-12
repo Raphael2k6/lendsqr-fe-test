@@ -32,7 +32,6 @@ const Sidebar: React.FunctionComponent = () => {
   });
 
   const businesses = Businesses.map((item: any, i: number) => {
-    console.log(item.name);
     return (
       <>
         <Link key={item.id} to={item.route}>
@@ -70,21 +69,23 @@ const Sidebar: React.FunctionComponent = () => {
 
   return (
     <div className={styles.sidebar}>
-      <div className={styles.orgToggle}>
-        <Icon name="briefcase" />
-        <span>Switch Organization</span>
-        <Icon name={"arrowdown"} />
+      <div className={styles.sidebarContainer}>
+        <div className={styles.orgToggle}>
+          <Icon name="briefcase" />
+          <span>Switch Organization</span>
+          <Icon name={"arrowdown"} />
+        </div>
+        <div className={styles.menuItems}>
+          <Icon name="dashboard" />
+          <p>Dashboard</p>
+        </div>
+        <h5 className={styles.menuHeader}>CUSTOMERS</h5>
+        {customers}
+        <h5 className={styles.menuHeader}>BUSINESSES</h5>
+        {businesses}
+        <h5 className={styles.menuHeader}>SETTINGS</h5>
+        {settings}
       </div>
-      <div className={styles.menuItems}>
-        <Icon name="dashboard" />
-        <p>Dashboard</p>
-      </div>
-      <h5 className={styles.menuHeader}>CUSTOMERS</h5>
-      {customers}
-      <h5 className={styles.menuHeader}>BUSINESSES</h5>
-      {businesses}
-      <h5 className={styles.menuHeader}>SETTINGS</h5>
-      {settings}
     </div>
   );
 };

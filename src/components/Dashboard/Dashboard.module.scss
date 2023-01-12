@@ -1,0 +1,98 @@
+@import "../../assets/styles/sharedstyles.scss";
+
+.dashboardContainer {
+  width: 80%;
+  background-color: #fbfbfb;
+  height: 90vh;
+  padding-left: 20%;
+  padding-top: 6%;
+  overflow-x: hidden;
+  .content {
+    width: 100%;
+    padding-left: 1rem;
+    overflow-y: scroll;
+   
+    h3 {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 28px;
+      color: #213f7d;
+    }
+    .usersCardContainer {
+      display: flex;
+      gap: to-rem(26);
+    }
+    .tableContainer {
+      width: 92.6%;
+      height: to-rem(620);
+      background: #ffffff;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+      margin-top: to-rem(40);
+      padding: to-rem(20 0 20 30);
+      overflow-y: scroll;
+      margin-bottom: to-rem(40);
+      .tableHeader {
+        padding-bottom: 3rem;
+        display: grid;
+        grid-template-columns: 17% 13% 20% 20% 20% 10%;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 14px;
+        align-items: center;
+        color: #545f7d;
+        span {
+          display: flex;
+          svg {
+            font-size: 12px;
+            padding: 10px;
+          }
+        }
+      }
+      .tableContent {
+        margin-top: -2rem;
+        height: 65vh;
+        .tableItems {
+          margin-bottom: 1rem;
+          padding: to-rem(10 0 30 0);
+          display: grid;
+          grid-template-columns: 17% 13% 20% 20% 20% 10%;
+          font-size: 14px;
+          line-height: 16px;
+          color: #545f7d;
+          border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+        }
+      }
+    }
+  }
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.cards {
+  width: 18%;
+  height: to-rem(120);
+  padding: to-rem(30);
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #545f7d;
+  }
+  span {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #213f7d;
+  }
+}
+

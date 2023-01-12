@@ -2,15 +2,14 @@
 
 
 .layoutConatiner {
-  // display: flex;
-  // flex-direction: row;
-  // align-items: center;
-  // justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
   .layoutMain {
     width: 100%;
-    height: 100vh;
     background: #fbfbfb;
-    z-index: 100;
+   
     // .navbar {
     //   height: to-rem(100);
     //   background-color: #fff;

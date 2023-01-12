@@ -1,8 +1,76 @@
 @import "../../../assets/styles/sharedstyles.scss";
 .navBar {
-    background: #FFFFFF;
-    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
-    height: to-rem(90);
-    z-index: 10;
-    position: relative;
+  background: #ffffff;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  height: to-rem(30);
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
+  padding: to-rem(30 36.39);
+  .navLeft {
+    display: flex;
+    gap: to-rem(170);
+    width: 50%;
+    svg {
+        cursor: pointer;
+    }
+    .inputContainer {
+      position: relative;
+      input {
+        background: #ffffff;
+        opacity: 0.2;
+        border: 1px solid #213f7d;
+        border-radius: 8px;
+        width: to-rem(400);
+        height: to-rem(40);
+        text-indent: to-rem(20);
+      }
+      input::placeholder {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: #545f7d;
+        opacity: 0.7;
+      }
+      .iconContainer {
+        position: absolute;
+        background-color: #39cdcc;
+        width: to-rem(56);
+        height: to-rem(40);
+        top: 0;
+        right: 0;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        cursor: pointer;
+        svg {
+          padding: to-rem(13);
+          width: to-rem(18);
+        }
+      }
+    }
+  }
+  .navRight {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: to-rem(51);
+    width: 50%;
+    a {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #213f7d;
+      cursor: pointer;
+    }
+  }
+  .navRight a:nth-child(1) {
+    text-decoration-line: underline;
+  }
+  .navRight a:nth-child(4) {
+    margin-left: -40px;
+  }
 }

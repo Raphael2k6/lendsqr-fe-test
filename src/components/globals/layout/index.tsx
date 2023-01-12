@@ -13,20 +13,19 @@ import NavBar from "../navBar/NavBar";
 // import MobileSideBar from "../MobileSidebar";
 
 const Layout = (props: { sidebar: any; children: ReactNode }) => {
-
   return (
     <>
-      {props.sidebar ? (
-        <div className={styles.layoutConatiner}>
-          <div className={styles.layoutMain}>
-            <NavBar />
+      {props.sidebar && (
+        <>
+          <div className={styles.layoutConatiner}>
+            <Sidebar />
+            <div className={styles.layoutMain}>
+              <NavBar />
+            </div>
+            {/* {isOpen && <MobileSideBar hideMobileSidebar={hideMobileSidebar} />} */}
           </div>
-          <Sidebar />
-          
-          {/* {isOpen && <MobileSideBar hideMobileSidebar={hideMobileSidebar} />} */}
-        </div>
-      ) : (
-        props.children
+          {props.children}
+        </>
       )}
     </>
   );
