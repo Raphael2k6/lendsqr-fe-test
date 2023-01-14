@@ -22,7 +22,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     if (password && userName) {
-      history.push("/dashboard");
+      history.push("/users");
     }
   };
 

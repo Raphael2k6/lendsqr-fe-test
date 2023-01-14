@@ -4,6 +4,7 @@ import { Customers, Businesses, Settings } from "./sideBarData";
 import Icon from "../../../assets/icons/icons";
 import { Link } from "react-router-dom";
 import styles from "./SideBar.module.scss";
+import { composeClasses } from "../../../utils/utilities";
 
 const Sidebar: React.FunctionComponent = () => {
   const [active, setActive] = useState(1);
@@ -20,8 +21,7 @@ const Sidebar: React.FunctionComponent = () => {
           <div
             key={item.id}
             onClick={() => handleSetActive(item.id)}
-            //   className={location.pathname === item.route ? "active" : ""}
-            className={styles.menuItems}
+            className={location.pathname === item.route ? styles.active : styles.menuItems}
           >
             <Icon name={item.icon} />
             <p>{item.name}</p>
@@ -38,8 +38,7 @@ const Sidebar: React.FunctionComponent = () => {
           <div
             key={item.id}
             onClick={() => handleSetActive(item.id)}
-            //   className={location.pathname === item.route ? "active" : ""}
-            className={styles.menuItems}
+            className={location.pathname === item.route ? styles.active : styles.menuItems}
           >
             <Icon name={item.icon} />
             <p>{item.name}</p>
@@ -56,8 +55,7 @@ const Sidebar: React.FunctionComponent = () => {
           <div
             key={item.id}
             onClick={() => handleSetActive(item.id)}
-            //   className={location.pathname === item.route ? "active" : ""}
-            className={styles.menuItems}
+            className={location.pathname === item.route ? styles.active : styles.menuItems}
           >
             <Icon name={item.icon} />
             <p>{item.name}</p>

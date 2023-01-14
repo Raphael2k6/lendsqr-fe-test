@@ -1,11 +1,12 @@
-import React from 'react';
-import Icon from '../../../assets/icons/icons';
-
+import React from "react";
+import Icon from "../../../assets/icons/icons";
 
 const loader = () => {
   return (
-    <div><Icon name="loader" /></div>
-  )
-}
+    <div style={{display: "flex", justifyContent: "center", alignItems: "center",  marginTop: "20%"}}>
+      <Icon name="loader" />
+    </div>
+  );
+};
 
-export default loader
+export default loader;

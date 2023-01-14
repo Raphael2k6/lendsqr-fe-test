@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Icon from "../../assets/icons/icons";
-import styles from "./Dashboard.module.scss";
-import { userInfos } from "./dashboardData";
+import styles from "./UsersComponent.module.scss";
+import { userInfos } from "./usersData";
 import { getAPI } from "../../utils/Axios";
+import { formatDate } from "../../utils/utilities";
+import MoreActions from "./MoreActionsModal";
 
-const DashboardComponent = () => {
+const UsersComponent = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
- 
+  const [isClicked, setIsClicked] = useState<any>(0);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -40,6 +43,20 @@ const DashboardComponent = () => {
     return newuser;
   });
 
+  // const handleShowMore = () => {
+  //   setShowMore(!showMore);
+  // };
+
+  const handleShowMore = (index: any) => {
+    if (isClicked === index) {
+      return setIsClicked(null)
+    }
+    setIsClicked(index)
+  }
+
+  console.log(isClicked)
+  console.log("USER", )
+
   return (
     <div className={styles.dashboardContainer}>
       <div className={styles.content}>
@@ -69,20 +86,32 @@ const DashboardComponent = () => {
               </span>
             </div>
             <div className={styles.tableContent}>
-              {userData.map((user: any, i) => (
-                <div className={styles.tableItems} key={i}>
+              {userData.map((user: any, i) => {
+                return (
+                  <div className={styles.tableItems} key={i}>
                   <span>{user.orgName}</span>
                   <span>{user.userName}</span>
                   <span>{user.email}</span>
                   <span>{user.phoneNumber}</span>
-                  <span>{user.createdAt}</span>
-                  <span>{user.status}</span>
-                  {/* <div onClick={handleShowMore}>
-                      <img src={MoreImg} alt="" />
-                    </div> */}
-                  {/* {showMore && <MoreActions item={item} handleShowMore={handleShowMore} />} */}
+                  <span>{formatDate(user.createdAt)}</span>
+                  <div style={{display: "flex", gap: 90}}>
+                    <span>{user.status}</span>
+                    <div onClick={() => handleShowMore(user.id)}>
+                      <Icon name="more" />
+                    </div>
+                    {isClicked === user.id ? (
+                      <MoreActions
+                        user={user}
+                        handleShowMore={handleShowMore}
+                      />
+                    ) : ""}
+                  </div>
                 </div>
-              ))}
+                )
+              }
+                
+               
+              )}
             </div>
           </div>
         )}
@@ -91,4 +120,4 @@ const DashboardComponent = () => {
   );
 };
 
-export default DashboardComponent;
+export default UsersComponent;

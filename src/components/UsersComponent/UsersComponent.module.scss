@@ -36,7 +36,7 @@
       .tableHeader {
         padding-bottom: 3rem;
         display: grid;
-        grid-template-columns: 17% 13% 20% 20% 20% 10%;
+        grid-template-columns:  17% 13% 20% 15% 20% 15%;
         font-weight: 600;
         font-size: 12px;
         line-height: 14px;
@@ -57,11 +57,12 @@
           margin-bottom: 1rem;
           padding: to-rem(10 0 30 0);
           display: grid;
-          grid-template-columns: 17% 13% 20% 20% 20% 10%;
+          grid-template-columns:  17% 13% 20% 15% 20% 15%;
           font-size: 14px;
           line-height: 16px;
           color: #545f7d;
           border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+          cursor: pointer;
         }
       }
     }

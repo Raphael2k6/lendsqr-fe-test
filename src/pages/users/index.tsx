@@ -2,10 +2,10 @@ import React, {useEffect} from 'react'
 // import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import Layout from '../../components/globals/layout';
-import DashboardComponent from '../../components/Dashboard';
+import UsersComponent from '../../components/UsersComponent';
 // import { rootStore } from '../../utils/TypeScript'
 
-const Dashboard = () => {
+const Users = () => {
 //   const {auth} = useSelector((state: rootStore) => state)
 //   const history = useHistory()
 
@@ -18,9 +18,9 @@ const Dashboard = () => {
   // },[auth.access_token, history])
   return (
       <Layout sidebar>
-          <DashboardComponent />
+          <UsersComponent />
       </Layout>
   )
 }
 
-export default Dashboard;
+export default Users;

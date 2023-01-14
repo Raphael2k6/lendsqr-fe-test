@@ -1,0 +1,43 @@
+@import "../../../assets/styles/sharedstyles.scss";
+
+.modalContainer {
+  position: fixed;
+  width: 100%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  left: -2%;
+  top: 0%;
+  .content {
+    .container {
+      width: 180px;
+      height: 130px;
+      background: #ffffff;
+      border: 1px solid rgba(84, 95, 125, 0.04);
+      border-radius: 4px;
+      padding-bottom: 10px;
+      .actions {
+        div {
+          padding: 0.5rem 1rem;
+          margin-bottom: 10px;
+          border-radius: 2px;
+          cursor: pointer;
+          align-items: center;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 24px;
+          color: #545f7d;
+          svg {
+            padding-right: 10px;
+          }
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

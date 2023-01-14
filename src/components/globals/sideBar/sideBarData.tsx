@@ -3,7 +3,7 @@ export const Customers = [
         id: 1,
         name: 'Users',
         icon: 'users',
-        route: '/dashboard'
+        route: '/users'
     },
     {
         id: 2,
