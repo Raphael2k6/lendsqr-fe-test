@@ -10,7 +10,6 @@ const Login = () => {
   const [showPass, setShowPassword] = useState(true);
   const [userLogin, setUserLogin] = useState(initialState);
   const { userName, password } = userLogin;
-  const [loading, setLoading] = useState(false);
   const history = useHistory();
 
   const handleInputChange = (e: InputChange) => {
@@ -20,7 +19,6 @@ const Login = () => {
 
   const handleSubmit = (e: FormSubmit) => {
     e.preventDefault();
-    setLoading(true);
     if (password && userName) {
       history.push("/users");
     }
@@ -34,7 +32,7 @@ const Login = () => {
             <Icon name="logo" />
           </div>
           <div className={styles.imgContainer}>
-            <img src={loginImg} alt="login image" className={styles.img} />
+            <img src={loginImg} alt="login" className={styles.img} />
           </div>
         </div>
       </div>

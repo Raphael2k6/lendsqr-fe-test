@@ -4,7 +4,6 @@ import { Customers, Businesses, Settings } from "./sideBarData";
 import Icon from "../../../assets/icons/icons";
 import { Link } from "react-router-dom";
 import styles from "./SideBar.module.scss";
-import { composeClasses } from "../../../utils/utilities";
 
 const Sidebar: React.FunctionComponent = () => {
   const [active, setActive] = useState(1);
@@ -16,8 +15,8 @@ const Sidebar: React.FunctionComponent = () => {
 
   const customers = Customers.map((item, i) => {
     return (
-      <>
-        <Link key={item.id} to={item.route}>
+      <div key={item.id}>
+        <Link to={item.route}>
           <div
             key={item.id}
             onClick={() => handleSetActive(item.id)}
@@ -27,14 +26,14 @@ const Sidebar: React.FunctionComponent = () => {
             <p>{item.name}</p>
           </div>
         </Link>
-      </>
+      </div>
     );
   });
 
   const businesses = Businesses.map((item: any, i: number) => {
     return (
-      <>
-        <Link key={item.id} to={item.route}>
+      <div key={item.id}>
+        <Link to={item.route}>
           <div
             key={item.id}
             onClick={() => handleSetActive(item.id)}
@@ -44,14 +43,14 @@ const Sidebar: React.FunctionComponent = () => {
             <p>{item.name}</p>
           </div>
         </Link>
-      </>
+      </div>
     );
   });
 
   const settings = Settings.map((item: any, i: number) => {
     return (
-      <>
-        <Link key={item.id} to={item.route}>
+      <div key={item.id}>
+        <Link to={item.route}>
           <div
             key={item.id}
             onClick={() => handleSetActive(item.id)}
@@ -61,7 +60,7 @@ const Sidebar: React.FunctionComponent = () => {
             <p>{item.name}</p>
           </div>
         </Link>
-      </>
+      </div>
     );
   });
 

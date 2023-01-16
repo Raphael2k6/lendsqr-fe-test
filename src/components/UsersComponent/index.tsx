@@ -5,23 +5,20 @@ import { userInfos } from "./usersData";
 import { getAPI } from "../../utils/Axios";
 import { formatDate } from "../../utils/utilities";
 import MoreActions from "./MoreActionsModal";
+import FilterComponent from "../FilterComponent";
 
 const UsersComponent = () => {
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [isClicked, setIsClicked] = useState<any>(0);
-  const [showMore, setShowMore] = useState(false);
+  const [showFilter, setShowFilter] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
     getAPI("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
       .then((res) => {
         setUsers(res.data);
-        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
-        setLoading(false);
       });
   }, []);
 
@@ -34,28 +31,23 @@ const UsersComponent = () => {
       </div>
     );
   });
-  // if (loading) {
-  //   return <Loader />
-  // }
 
   const userData = users.map((user: any) => {
     const newuser = { ...user, status: "inactive" };
     return newuser;
   });
 
-  // const handleShowMore = () => {
-  //   setShowMore(!showMore);
-  // };
-
   const handleShowMore = (index: any) => {
     if (isClicked === index) {
-      return setIsClicked(null)
+      return setIsClicked(null);
     }
-    setIsClicked(index)
-  }
+    setIsClicked(index);
+  };
 
-  console.log(isClicked)
-  console.log("USER", )
+  const handleShowFilter = () => {
+    console.log("hello");
+    setShowFilter(!showFilter);
+  };
 
   return (
     <div className={styles.dashboardContainer}>
@@ -66,52 +58,70 @@ const UsersComponent = () => {
           <div className={styles.tableContainer}>
             <div className={styles.tableHeader}>
               <span>
-                <p>ORGANIZATION</p> <Icon name="filter" />
+                <p>ORGANIZATION</p>{" "}
+                <span onClick={handleShowFilter}>
+                  <Icon name="filter" />
+                </span>
               </span>
               <span>
-                <p>USERNAME</p> <Icon name="filter" />
+                <p>USERNAME</p>
+                <span onClick={handleShowFilter}>
+                  <Icon name="filter" />
+                </span>
               </span>
               <span>
-                <p>EMAIL</p> <Icon name="filter" />
+                <p>EMAIL</p>
+                <span onClick={handleShowFilter}>
+                  <Icon name="filter" />
+                </span>
               </span>
               <span>
-                <p>PHONE NUMBER</p> <Icon name="filter" />
+                <p>PHONE NUMBER</p>{" "}
+                <span onClick={handleShowFilter}>
+                  <Icon name="filter" />
+                </span>
               </span>
               <span>
                 <p>DATE JOINED</p>
-                <Icon name="filter" />
+
+                <span onClick={handleShowFilter}>
+                  <Icon name="filter" />
+                </span>
               </span>
               <span>
-                <p>STATUS</p> <Icon name="filter" />
+                <p>STATUS</p>
+                <span onClick={handleShowFilter}>
+                  <Icon name="filter" />
+                </span>
               </span>
             </div>
             <div className={styles.tableContent}>
               {userData.map((user: any, i) => {
                 return (
                   <div className={styles.tableItems} key={i}>
-                  <span>{user.orgName}</span>
-                  <span>{user.userName}</span>
-                  <span>{user.email}</span>
-                  <span>{user.phoneNumber}</span>
-                  <span>{formatDate(user.createdAt)}</span>
-                  <div style={{display: "flex", gap: 90}}>
-                    <span>{user.status}</span>
-                    <div onClick={() => handleShowMore(user.id)}>
-                      <Icon name="more" />
+                    <span>{user.orgName}</span>
+                    <span>{user.userName}</span>
+                    <span>{user.email}</span>
+                    <span>{user.phoneNumber}</span>
+                    <span>{formatDate(user.createdAt)}</span>
+                    <div style={{ display: "flex", gap: 90 }}>
+                      <span>{user.status}</span>
+                      <div onClick={() => handleShowMore(user.id)}>
+                        <Icon name="more" />
+                      </div>
+                      {isClicked === user.id ? (
+                        <MoreActions
+                          user={user}
+                          handleShowMore={handleShowMore}
+                        />
+                      ) : (
+                        ""
+                      )}
                     </div>
-                    {isClicked === user.id ? (
-                      <MoreActions
-                        user={user}
-                        handleShowMore={handleShowMore}
-                      />
-                    ) : ""}
                   </div>
-                </div>
-                )
-              }
-                
-               
-              )}
+                );
+              })}
+              {showFilter && <FilterComponent />}
             </div>
           </div>
         )}

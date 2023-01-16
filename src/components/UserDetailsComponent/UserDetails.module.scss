@@ -1,14 +1,14 @@
 @import "../../assets/styles/sharedstyles.scss";
 
 .userDetailContainer {
-  width: 90%;
+  width: 80%;
   background-color: #fbfbfb;
   height: 90vh;
   padding-left: 20%;
   padding-top: 6%;
   overflow-x: hidden;
   .content {
-    width: 80%;
+    width: 90%;
     padding-left: 1rem;
     overflow-y: scroll;
     .back {
@@ -138,8 +138,42 @@
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
     padding: to-rem(30);
-    .container {
+    h3 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #213f7d;
+    }
+    .content {
       display: flex;
+      gap: 6rem;
+      margin-left: -1rem;
+      span {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        text-transform: uppercase;
+        color: #545f7d;
+      }
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #545f7d;
+      }
+    }
+    .header {
+      display: flex;
+      gap: 2rem;
+    }
+    .profileDetails {
+      display: flex;
+      gap: 2rem;
+    }
+    hr {
+      opacity: 0.2;
+      color: #213f7d;
     }
   }
 }

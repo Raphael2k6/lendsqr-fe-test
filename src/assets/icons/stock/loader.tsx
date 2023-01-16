@@ -21,7 +21,7 @@ const SVG = (props: unknown): unknown => (
       stroke="#3ed1ee"
       strokeWidth="9"
       r="28"
-      stroke-dasharray="131.94689145077132 45.982297150257104"
+      strokeDasharray="131.94689145077132 45.982297150257104"
     >
       <animateTransform
         attributeName="transform"

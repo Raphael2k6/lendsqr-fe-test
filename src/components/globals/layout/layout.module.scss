@@ -1,6 +1,5 @@
 @import "../../../assets/styles/sharedstyles.scss";
 
-
 .layoutConatiner {
   display: flex;
   flex-direction: row;
@@ -9,19 +8,5 @@
   .layoutMain {
     width: 100%;
     background: #fbfbfb;
-   
-    // .navbar {
-    //   height: to-rem(100);
-    //   background-color: #fff;
-    // }
-    // .navBarContainer {
-    //   display: flex;
-    //   background: #ffffff;
-    //   height: to-rem(100);
-    //   border-bottom: 1px solid #f1f1f1;
-    //   justify-content: space-between;
-    //   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
-    //   z-index: 1000;
-    // }
   }
 }

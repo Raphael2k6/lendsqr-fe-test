@@ -5,8 +5,6 @@ import { getAPI } from '../../utils/Axios';
 import Layout from '../../components/globals/layout';
 import UserDetailsComponent from '../../components/UserDetailsComponent';
 import Loader from '../../components/globals/loader/loader';
-import { useHistory } from 'react-router-dom';
-
 
 const UserDetails = () => {
     const id = useParams<IParams>().slug;

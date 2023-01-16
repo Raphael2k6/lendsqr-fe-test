@@ -12,7 +12,7 @@ const SVG = (props: unknown): unknown => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#clip0_5530_1564)">
+    <g clipPath="url(#clip0_5530_1564)">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
